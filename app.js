@@ -1,16 +1,20 @@
 const charactersList = document.querySelector("#charactersList");
 const searchBar = document.querySelector("#searchBar");
+let hpCharacters = [];
 
 searchBar.addEventListener("keyup", (e) => {
-  console.log(e.target.value);
+  const searchStr = e.target.value;
+  const filteredCharacter = hpCharacters.filter((character) => {
+    return character.name.includes(searchStr);
+  });
+  console.log(filteredCharacter);
 });
 
 const loadCharacters = async () => {
   try {
     const res = await fetch("http://hp-api.herokuapp.com/api/characters");
-    let hpCharacters = await res.json();
+    hpCharacters = await res.json();
     displayCharacters(hpCharacters);
-    console.log(hpCharacters);
   } catch (err) {
     console.error(err);
   }
