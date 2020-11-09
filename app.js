@@ -3,11 +3,14 @@ const searchBar = document.querySelector("#searchBar");
 let hpCharacters = [];
 
 searchBar.addEventListener("keyup", (e) => {
-  const searchStr = e.target.value;
+  const searchStr = e.target.value.toLowerCase();
   const filteredCharacter = hpCharacters.filter((character) => {
-    return character.name.includes(searchStr);
+    return (
+      character.name.toLowerCase().includes(searchStr) ||
+      character.house.toLowerCase().includes(searchStr)
+    );
   });
-  console.log(filteredCharacter);
+  displayCharacters(filteredCharacter);
 });
 
 const loadCharacters = async () => {
