@@ -9,3 +9,4 @@ Methods used:
 - .map()
 - .filter()
 - .includes()
+- .toLowerCase()
