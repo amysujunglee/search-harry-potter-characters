@@ -1,12 +1,11 @@
-# search-harry-potter-characters
+# Search Harry Potter Characters
 Display all the Harry Porter characters and search the characters by their names or house
 
-
-Languages used:
+## Languages
 - JavaScript, HTML, CSS
 
-Methods used:
-- .map()
-- .filter()
-- .includes()
-- .toLowerCase()
+## Methods
+- map()
+- filter()
+- includes()
+- toLowerCase()
